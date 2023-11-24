@@ -1,0 +1,42 @@
+/* app.component.css */
+
+@keyframes highlightAndEnlarge {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  }
+  
+  .container {
+    margin: auto;
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .box {
+    width: 400px; /* Adjust the width as needed */
+    height: 400px; /* Square box */
+    border: 1px solid #ddd; /* Add border or styling as needed */
+    overflow: hidden;
+  }
+  
+  .left-box,
+  .right-box {
+    flex: 1;
+  }
+  
+  .box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  }
+  
