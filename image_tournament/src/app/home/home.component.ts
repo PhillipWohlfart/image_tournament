@@ -9,10 +9,13 @@ import { HttpClient, HttpHandler } from '@angular/common/http';
 })
 export class HomeComponent {
 
-  
+  leftImage: String="";
+  rightImage: String="";
   roundNumber:number =0;
   imagesPathList=[];
   imageArray: any;
+  image_data!: String;
+  image_media_type!: String;
   
   constructor(private imageService: ImageService){}
   ngOnInit(){
@@ -22,7 +25,12 @@ export class HomeComponent {
     this.imageService.getImages().subscribe(
       (response) => {
         this.imageArray = response.imageArray;
-        console.log(this.imageArray);
+        this.image_data=this.imageArray[2].imageData;
+        this.image_media_type=this.imageArray[2].imageType;
+        console.log("media type: "+this.image_media_type);
+        console.log("image data type: "+this.image_data);
+
+        console.log('imageArray (JSON):', JSON.stringify(this.imageArray, null, 2));
       },
       (error) => {
         console.error('Error loading images:', error);

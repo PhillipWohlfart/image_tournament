@@ -16,14 +16,14 @@ const imageArray = [];
 
 app.post('/upload', (req, res) => {
   try {
-    const { imageName, imageData } = req.body;
+    const { imageName, imageType, imageData } = req.body;
 
     if (!imageData) {
       return res.status(400).json({ error: 'No image data provided' });
     }
 
     // Save image data and name to the array
-    imageArray.push({ imageName, imageData });
+    imageArray.push({ imageName, imageType, imageData });
 
     return res.json({ success: true, message: 'Image data and name saved successfully' });
   } catch (error) {
